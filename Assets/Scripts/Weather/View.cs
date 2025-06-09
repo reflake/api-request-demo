@@ -1,24 +1,21 @@
-using Cysharp.Threading.Tasks;
+using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 namespace Weather
 {
 	public class View : MonoBehaviour
 	{
 		[SerializeField] private TMP_Text label = null;
+		[SerializeField] private Button refreshButton = null;
+		
+		public event Action OnRefreshClick;
 
-		private async UniTask Start()
+		private void Awake()
 		{
-			ShowTemperature(54);
-			
-			await UniTask.Delay(5000);
-			
-			ShowLoading();
-			
-			await UniTask.Delay(5000);
-			
-			ShowError("No internet connection");
+			refreshButton.onClick.AddListener(Refresh);
 		}
 
 		public void ShowTemperature(int temperature)
@@ -37,6 +34,11 @@ namespace Weather
 		{
 			label.text = "Loading...";
 			label.color = Color.yellow;
+		}
+
+		private void Refresh()
+		{
+			OnRefreshClick?.Invoke();
 		}
 	}
 }
