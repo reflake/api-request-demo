@@ -18,5 +18,10 @@ namespace Breeds.List
 			Container.Bind<ItemPresenter>().FromNew().AsSingle().NonLazy();
 			Container.Bind<ItemView>().FromComponentOnRoot();
 		}
+
+		public void Remove()
+		{
+			Destroy(gameObject);
+		}
 	}
 }

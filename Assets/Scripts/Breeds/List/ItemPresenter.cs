@@ -10,6 +10,7 @@ namespace Breeds.List
 			_view = view;
 			_model = model;
 			
+			_view.SetIndex(model.Index + 1);
 			_view.SetName(model.Name);
 		}
 	}

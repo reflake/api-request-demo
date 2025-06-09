@@ -1,14 +1,23 @@
+using System;
+
 namespace Breeds.List.Data
 {
-	public class Breed
+	[Serializable]
+	public class ResponseData
 	{
-		public int Id;
-		public string Name;
+		public BreedEntry[] data;
+	}
+	
+	[Serializable]
+	public class BreedEntry
+	{
+		public string id;
+		public BreedAttributes attributes;
+	}
 
-		public Breed(int id, string name)
-		{
-			Id = id;
-			Name = name;
-		}
+	[Serializable]
+	public class BreedAttributes
+	{
+		public string name;
 	}
 }
