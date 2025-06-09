@@ -19,5 +19,6 @@ namespace Weather.Data
 	{
 		public string name = null;
 		public int temperature = 0;
+		public string shortForecast;
 	}
 }

@@ -1,6 +1,5 @@
 using System;
 using Cysharp.Threading.Tasks;
-using Random = UnityEngine.Random;
 
 namespace Weather
 {
@@ -14,7 +13,7 @@ namespace Weather
 			_view = view;
 			_model = model;
 			
-			ShowTemperature();
+			ShowTemperature().Forget();
 			
 			// Subscriptions
 			_view.OnRefreshClick += Refresh;
@@ -25,18 +24,20 @@ namespace Weather
 			_view.OnRefreshClick -= Refresh;
 		}
 
-		public async UniTaskVoid ShowTemperature()
+		private async UniTaskVoid ShowTemperature()
 		{
 			_view.ShowLoading();
 			
-			int temperature = await _model.GetTemperatureAsync();
+			// Simulate loading: await UniTask.Delay(1500);
 			
-			_view.ShowTemperature(temperature);
+			WeatherResponse response = await _model.GetTemperatureAsync();
+			
+			_view.ShowWeather(response.Temperature, response.IconType);
 		}
 
 		private void Refresh()
 		{
-			ShowTemperature();
+			ShowTemperature().Forget();
 		}
 	}
 }

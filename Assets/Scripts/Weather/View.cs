@@ -18,10 +18,21 @@ namespace Weather
 			refreshButton.onClick.AddListener(Refresh);
 		}
 
-		public void ShowTemperature(int temperature)
+		public void ShowWeather(int temperature, IconType iconType)
 		{
-			label.text = $"{temperature}°F";
-			label.color = Color.white;;
+			string icon = iconType switch
+			{
+				IconType.Sunny => "<sprite=2>",
+				IconType.Clear => "<sprite=1>",
+				IconType.PartlyCloudy => "<sprite=5>",
+				IconType.MostlyClear => "<sprite=0>",
+				IconType.Rainy =>  "<sprite=3>",
+				IconType.Thunderstorms => "<sprite=4>",
+				_ => "?"
+			};
+			
+			label.color = Color.white;
+			label.text = $"{icon} Сегодня {temperature}°F";
 		}
 
 		public void ShowError(string message)
