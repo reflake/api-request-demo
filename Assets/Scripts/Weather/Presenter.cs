@@ -1,6 +1,5 @@
 using System;
 using Cysharp.Threading.Tasks;
-using UnityEngine;
 using Random = UnityEngine.Random;
 
 namespace Weather
@@ -8,13 +7,16 @@ namespace Weather
 	public class Presenter : IDisposable
 	{
 		private readonly View _view = null;
+		private readonly Model _model = null;
 
-		public Presenter(View view)
+		public Presenter(View view, Model model)
 		{
 			_view = view;
+			_model = model;
 			
 			ShowTemperature();
 			
+			// Subscriptions
 			_view.OnRefreshClick += Refresh;
 		}
 
@@ -27,9 +29,7 @@ namespace Weather
 		{
 			_view.ShowLoading();
 			
-			await UniTask.Delay(2000);
-			
-			int temperature = Random.Range(60, 90);
+			int temperature = await _model.GetTemperatureAsync();
 			
 			_view.ShowTemperature(temperature);
 		}
