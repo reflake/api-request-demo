@@ -466,9 +466,10 @@ GameObject:
   m_Component:
   - component: {fileID: 422736559}
   - component: {fileID: 422736561}
+  - component: {fileID: 422736562}
   - component: {fileID: 422736560}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Temperature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -490,7 +491,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -85}
   m_SizeDelta: {x: 305.208, y: 98.179}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &422736560
@@ -515,8 +516,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u0422\u044B"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d7e1f525e5c3fda4095d69a3facbbbed, type: 2}
-  m_sharedMaterial: {fileID: -7470965658686173332, guid: d7e1f525e5c3fda4095d69a3facbbbed, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 30f4573f4f8c8854689311b8c25fa79c, type: 2}
+  m_sharedMaterial: {fileID: 6273857650531516441, guid: 30f4573f4f8c8854689311b8c25fa79c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -592,6 +593,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 422736558}
   m_CullTransparentMesh: 1
+--- !u!114 &422736562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 422736558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee895af1d5614af9aacce32034381218, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  label: {fileID: 422736560}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
