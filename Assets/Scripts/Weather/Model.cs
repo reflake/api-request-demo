@@ -36,8 +36,7 @@ namespace Weather
 
 		public async UniTask<WeatherResponse> GetTemperatureAsync()
 		{
-			if (_currentRequest != null && !_currentRequest.isDone)
-				throw new TaskCanceledException();
+			TryCancelRequest();
 			
 			_currentRequest = UnityWebRequest.Get(ApiPath);
 			

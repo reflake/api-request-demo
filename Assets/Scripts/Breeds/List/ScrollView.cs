@@ -34,7 +34,13 @@ namespace Breeds.List
 
 		private void OnEnable()
 		{
-			InvokeRepeating(nameof(InvokeRefresh), 5.0f, 5.0f);
+			RefreshDelay();
+		}
+
+		public void RefreshDelay()
+		{
+			CancelInvoke();
+			Invoke(nameof(InvokeRefresh), 5.0f);
 		}
 
 		private void OnDisable()

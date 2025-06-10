@@ -60,7 +60,13 @@ namespace Weather
 
 		private void OnEnable()
 		{
-			InvokeRepeating(nameof(InvokeRefresh), 5.0f, 5.0f);
+			DelayRefresh();
+		}
+
+		public void DelayRefresh()
+		{
+			CancelInvoke();
+			Invoke(nameof(InvokeRefresh), 5.0f);
 		}
 
 		private void OnDisable()

@@ -35,6 +35,7 @@ namespace Weather
 			WeatherResponse response = await _model.GetTemperatureAsync();
 			
 			_view.ShowWeather(response.Temperature, response.IconType);
+			_view.DelayRefresh();
 		}
 
 		private void Refresh()

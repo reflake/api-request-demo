@@ -53,6 +53,7 @@ namespace Breeds.List
 				.ToList();
 
 			_view.HideLoading();
+			_view.RefreshDelay();
 		}
 
 		private void ClearItems()
