@@ -29,7 +29,8 @@ namespace Weather
 		{
 			_view.ShowLoading();
 			
-			// Simulate loading: await UniTask.Delay(1500);
+			// Simulate loading:
+			await UniTask.Delay(1500);
 			
 			WeatherResponse response = await _model.GetTemperatureAsync();
 			

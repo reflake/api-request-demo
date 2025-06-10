@@ -12,6 +12,7 @@ namespace Weather
 		[SerializeField] private TMP_Text label = null;
 		[SerializeField] private Button refreshButton = null;
 		[SerializeField] private Sprite[] iconSprites = null;
+		[SerializeField] private GameObject loadingGO = null;
 		
 		public event Action OnLostFocus = null;
 		public event Action OnRefreshClick = null;
@@ -23,6 +24,7 @@ namespace Weather
 
 		public void ShowWeather(int temperature, IconType iconType)
 		{
+			loadingGO.SetActive(false);
 			iconImage.enabled = true;
 			
 			Sprite icon = iconType switch
@@ -42,14 +44,13 @@ namespace Weather
 
 		public void ShowError(string message)
 		{
+			loadingGO.SetActive(false);
 			label.text = message;
 		}
 
 		public void ShowLoading()
 		{
-			iconImage.enabled = false;
-			
-			label.text = "Loading...";
+			loadingGO.SetActive(true);
 		}
 
 		private void InvokeRefresh()

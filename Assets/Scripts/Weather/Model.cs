@@ -1,6 +1,7 @@
 using Cysharp.Threading.Tasks;
 using System;
 using System.Linq;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Networking;
 using Weather.Data;
@@ -35,7 +36,8 @@ namespace Weather
 
 		public async UniTask<WeatherResponse> GetTemperatureAsync()
 		{
-			TryCancelRequest();
+			if (_currentRequest != null && !_currentRequest.isDone)
+				throw new TaskCanceledException();
 			
 			_currentRequest = UnityWebRequest.Get(ApiPath);
 			

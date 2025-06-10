@@ -30,7 +30,8 @@ namespace Breeds.List
 		
 		public async UniTask<Breed[]> LoadEntries()
 		{
-			TryCancelRequest();
+			if (_currentRequest != null && !_currentRequest.isDone)
+				throw new TaskCanceledException();
 			
 			_currentRequest = UnityWebRequest.Get(ApiPath);
 			var response = await _currentRequest.SendWebRequest();

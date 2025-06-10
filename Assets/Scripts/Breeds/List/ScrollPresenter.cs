@@ -37,11 +37,15 @@ namespace Breeds.List
 
 		private async UniTaskVoid RefreshList()
 		{
-			ClearItems();
 			
 			_view.ShowLoading();
 			
 			var itemsData = await _model.LoadEntries();
+			
+			// Simulate loading:
+			await UniTask.Delay(1500);
+			
+			ClearItems();
 			
 			// Create items from their data
 			_items = itemsData
