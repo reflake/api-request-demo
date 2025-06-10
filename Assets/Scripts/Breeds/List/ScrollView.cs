@@ -11,6 +11,7 @@ namespace Breeds.List
 
 		public event Action OnClickRefresh = null;
 		public event Action OnLostFocus = null;
+		public event Action OnClear = null;
 
 		private void Awake()
 		{
@@ -34,7 +35,9 @@ namespace Breeds.List
 
 		private void OnEnable()
 		{
-			RefreshDelay();
+			OnClear?.Invoke();
+			
+			InvokeRefresh();
 		}
 
 		public void RefreshDelay()

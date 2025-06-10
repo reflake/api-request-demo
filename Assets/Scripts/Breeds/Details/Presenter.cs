@@ -22,6 +22,9 @@ namespace Breeds.Details
 			_view.ShowLoading();
 			
 			var data = await _model.GetDetailsAsync();
+
+			// Simulate loading:
+			await UniTask.Delay(2000);
 			
 			_view.SetName(data.Name);
 			_view.SetDescription(data.Description);

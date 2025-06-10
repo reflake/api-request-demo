@@ -13,7 +13,8 @@ namespace Weather
 		[SerializeField] private Button refreshButton = null;
 		[SerializeField] private Sprite[] iconSprites = null;
 		[SerializeField] private GameObject loadingGO = null;
-		
+
+		public event Action OnClear = null;
 		public event Action OnLostFocus = null;
 		public event Action OnRefreshClick = null;
 
@@ -26,6 +27,7 @@ namespace Weather
 		{
 			loadingGO.SetActive(false);
 			iconImage.enabled = true;
+			label.enabled = true;
 			
 			Sprite icon = iconType switch
 			{
@@ -60,7 +62,8 @@ namespace Weather
 
 		private void OnEnable()
 		{
-			DelayRefresh();
+			OnClear?.Invoke();
+			InvokeRefresh();
 		}
 
 		public void DelayRefresh()
@@ -74,6 +77,12 @@ namespace Weather
 			OnLostFocus?.Invoke();
 			
 			CancelInvoke();
+		}
+
+		public void HideWeather()
+		{
+			iconImage.enabled = false;
+			label.enabled = false;
 		}
 	}
 }

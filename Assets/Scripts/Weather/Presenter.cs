@@ -16,6 +16,7 @@ namespace Weather
 			ShowTemperature().Forget();
 			
 			// Subscriptions
+			_view.OnClear += Clear;
 			_view.OnLostFocus += CancelRequest;
 			_view.OnRefreshClick += Refresh;
 		}
@@ -23,6 +24,11 @@ namespace Weather
 		private void CancelRequest()
 		{
 			_model.TryCancelRequest();
+		}
+
+		private void Clear()
+		{
+			_view.HideWeather();
 		}
 
 		private async UniTaskVoid ShowTemperature()

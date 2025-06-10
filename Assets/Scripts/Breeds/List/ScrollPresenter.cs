@@ -19,6 +19,7 @@ namespace Breeds.List
 			_itemFactory = itemFactory;
 			
 			// Subscriptions
+			_view.OnClear += ClearItems;
 			_view.OnClickRefresh += Refresh;
 			_view.OnLostFocus += CancelRequests;
 
