@@ -4,7 +4,7 @@ using Zenject;
 
 namespace Breeds.List
 {
-	public class Scroll : MonoInstaller
+	public class ScrollPanel : MonoInstaller
 	{
 		public Item prefab;
 		public Transform container;

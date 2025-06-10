@@ -11,6 +11,8 @@ namespace Breeds.Details
 		public override void InstallBindings()
 		{
 			Container.BindInstance(this);
+
+			Container.Bind<View>().FromComponentOnRoot();
 			
 			// Inject breed Id into model
 			Container.BindInstance(Id).WhenInjectedInto<Model>();

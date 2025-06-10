@@ -43,5 +43,10 @@ namespace Breeds.Details
 		{
 			OnOkClick?.Invoke();
 		}
+
+		public void Remove()
+		{
+			Destroy(gameObject);
+		}
 	}
 }

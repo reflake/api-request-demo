@@ -12,6 +12,8 @@ namespace Breeds.Details
 			_view = view;
 			_model = model;
 
+			_view.OnOkClick += CloseWindow;
+
 			ShowDetails().Forget();
 		}
 
@@ -25,6 +27,11 @@ namespace Breeds.Details
 			_view.SetDescription(data.Description);
 
 			_view.HideLoading();
+		}
+
+		private void CloseWindow()
+		{
+			_view.Remove();
 		}
 	}
 }

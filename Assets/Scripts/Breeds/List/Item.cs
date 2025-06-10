@@ -1,3 +1,4 @@
+using Breeds.Details;
 using Zenject;
 
 namespace Breeds.List
@@ -5,6 +6,8 @@ namespace Breeds.List
 	public class Item : MonoInstaller
 	{
 		public class Factory : PlaceholderFactory<Breed, Item> {}
+
+		public DetailsPopup detailsPopupPrefab;
 		
 		[Inject] public readonly Breed Breed;
 		
