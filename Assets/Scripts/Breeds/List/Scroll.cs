@@ -1,4 +1,4 @@
-using Breeds.List.Data;
+using Breeds.Data;
 using UnityEngine;
 using Zenject;
 

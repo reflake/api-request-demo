@@ -1,4 +1,3 @@
-using Breeds.List.Data;
 using Zenject;
 
 namespace Breeds.List

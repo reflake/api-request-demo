@@ -1,11 +1,17 @@
 using System;
 
-namespace Breeds.List.Data
+namespace Breeds.Data
 {
 	[Serializable]
 	public class ResponseData
 	{
 		public BreedEntry[] data;
+	}
+
+	[Serializable]
+	public class ResponseDetailsData
+	{
+		public BreedEntry data;
 	}
 	
 	[Serializable]
@@ -19,5 +25,6 @@ namespace Breeds.List.Data
 	public class BreedAttributes
 	{
 		public string name;
+		public string description;
 	}
 }
