@@ -19,6 +19,7 @@ namespace Breeds.List
 			_itemFactory = itemFactory;
 			
 			// Subscriptions
+			_view.OnClickRefresh += ClickRefresh;
 			_view.OnLostFocus += CancelRequests;
 
 			RefreshList().Forget();
@@ -27,6 +28,11 @@ namespace Breeds.List
 		private void CancelRequests()
 		{
 			_model.TryCancelRequest();
+		}
+
+		private void ClickRefresh()
+		{
+			RefreshList().Forget();
 		}
 
 		private async UniTaskVoid RefreshList()

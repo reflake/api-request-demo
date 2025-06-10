@@ -1,17 +1,20 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Breeds.List
 {
 	public class ScrollView : MonoBehaviour
 	{
 		[SerializeField] private GameObject loadingText = null;
+		[SerializeField] private Button button = null;
 
+		public event Action OnClickRefresh = null;
 		public event Action OnLostFocus = null;
 
-		private void OnDisable()
+		private void Awake()
 		{
-			OnLostFocus?.Invoke();
+			button.onClick.AddListener(InvokeRefresh);
 		}
 		
 		public void ShowLoading()
@@ -22,6 +25,16 @@ namespace Breeds.List
 		public void HideLoading()
 		{
 			loadingText.SetActive(false);
+		}
+
+		private void InvokeRefresh()
+		{
+			OnClickRefresh?.Invoke();
+		}
+
+		private void OnDisable()
+		{
+			OnLostFocus?.Invoke();
 		}
 	}
 }
