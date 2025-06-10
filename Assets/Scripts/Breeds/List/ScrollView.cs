@@ -32,9 +32,16 @@ namespace Breeds.List
 			OnClickRefresh?.Invoke();
 		}
 
+		private void OnEnable()
+		{
+			InvokeRepeating(nameof(InvokeRefresh), 5.0f, 5.0f);
+		}
+
 		private void OnDisable()
 		{
 			OnLostFocus?.Invoke();
+			
+			CancelInvoke();
 		}
 	}
 }

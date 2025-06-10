@@ -18,12 +18,7 @@ namespace Weather
 
 		private void Awake()
 		{
-			refreshButton.onClick.AddListener(Refresh);
-		}
-
-		private void OnDisable()
-		{
-			OnLostFocus?.Invoke();
+			refreshButton.onClick.AddListener(InvokeRefresh);
 		}
 
 		public void ShowWeather(int temperature, IconType iconType)
@@ -57,9 +52,21 @@ namespace Weather
 			label.text = "Loading...";
 		}
 
-		private void Refresh()
+		private void InvokeRefresh()
 		{
 			OnRefreshClick?.Invoke();
+		}
+
+		private void OnEnable()
+		{
+			InvokeRepeating(nameof(InvokeRefresh), 5.0f, 5.0f);
+		}
+
+		private void OnDisable()
+		{
+			OnLostFocus?.Invoke();
+			
+			CancelInvoke();
 		}
 	}
 }
