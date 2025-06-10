@@ -8,8 +8,10 @@ namespace Weather
 {
 	public class View : MonoBehaviour
 	{
+		[SerializeField] private Image iconImage = null;
 		[SerializeField] private TMP_Text label = null;
 		[SerializeField] private Button refreshButton = null;
+		[SerializeField] private Sprite[] iconSprites = null;
 		
 		public event Action OnRefreshClick;
 
@@ -20,31 +22,33 @@ namespace Weather
 
 		public void ShowWeather(int temperature, IconType iconType)
 		{
-			string icon = iconType switch
+			iconImage.enabled = true;
+			
+			Sprite icon = iconType switch
 			{
-				IconType.Sunny => "<sprite=2>",
-				IconType.Clear => "<sprite=1>",
-				IconType.PartlyCloudy => "<sprite=5>",
-				IconType.MostlyClear => "<sprite=0>",
-				IconType.Rainy =>  "<sprite=3>",
-				IconType.Thunderstorms => "<sprite=4>",
-				_ => "?"
+				IconType.Sunny => iconSprites[0],
+				IconType.Clear => iconSprites[1],
+				IconType.PartlyCloudy => iconSprites[2],
+				IconType.MostlyClear => iconSprites[3],
+				IconType.Rainy => iconSprites[4],
+				IconType.Thunderstorms => iconSprites[5],
+				_ => null
 			};
 			
-			label.color = Color.white;
-			label.text = $"{icon} Сегодня {temperature}°F";
+			iconImage.sprite = icon;
+			label.text = $"Now {temperature}°F";
 		}
 
 		public void ShowError(string message)
 		{
 			label.text = message;
-			label.color = Color.red;
 		}
 
 		public void ShowLoading()
 		{
+			iconImage.enabled = false;
+			
 			label.text = "Loading...";
-			label.color = Color.yellow;
 		}
 
 		private void Refresh()
