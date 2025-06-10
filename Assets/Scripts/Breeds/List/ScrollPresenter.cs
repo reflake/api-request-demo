@@ -17,8 +17,16 @@ namespace Breeds.List
 			_view = view;
 			_model = model;
 			_itemFactory = itemFactory;
+			
+			// Subscriptions
+			_view.OnLostFocus += CancelRequests;
 
 			RefreshList().Forget();
+		}
+
+		private void CancelRequests()
+		{
+			_model.TryCancelRequest();
 		}
 
 		private async UniTaskVoid RefreshList()

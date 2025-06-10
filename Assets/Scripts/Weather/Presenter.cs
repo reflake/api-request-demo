@@ -3,7 +3,7 @@ using Cysharp.Threading.Tasks;
 
 namespace Weather
 {
-	public class Presenter : IDisposable
+	public class Presenter
 	{
 		private readonly View _view = null;
 		private readonly Model _model = null;
@@ -16,12 +16,13 @@ namespace Weather
 			ShowTemperature().Forget();
 			
 			// Subscriptions
+			_view.OnLostFocus += CancelRequest;
 			_view.OnRefreshClick += Refresh;
 		}
 
-		public void Dispose()
+		private void CancelRequest()
 		{
-			_view.OnRefreshClick -= Refresh;
+			_model.TryCancelRequest();
 		}
 
 		private async UniTaskVoid ShowTemperature()

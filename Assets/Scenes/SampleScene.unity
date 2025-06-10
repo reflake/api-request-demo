@@ -119,6 +119,76 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &23099237
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 23099238}
+  - component: {fileID: 23099240}
+  - component: {fileID: 23099239}
+  m_Layer: 5
+  m_Name: Tabs
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &23099238
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23099237}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2063708424}
+  - {fileID: 378077053}
+  m_Father: {fileID: 529419567}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -23.9534}
+  m_SizeDelta: {x: 589.1094, y: 810.5728}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &23099239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23099237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08eca9f7688a0a24685b89133b020c8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scriptableObjectInstallers: []
+  _monoInstallers:
+  - {fileID: 23099240}
+  _installerPrefabs: []
+  _autoRun: 1
+  _kernel: {fileID: 0}
+--- !u!114 &23099240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23099237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41a5448434fd4118aa88e1763a8be6a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  header: {fileID: 1416850571}
 --- !u!1 &220438787
 GameObject:
   m_ObjectHideFlags: 0
@@ -129,6 +199,7 @@ GameObject:
   m_Component:
   - component: {fileID: 220438788}
   - component: {fileID: 220438790}
+  - component: {fileID: 220438791}
   - component: {fileID: 220438789}
   m_Layer: 5
   m_Name: BreedsTab
@@ -210,6 +281,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 220438787}
   m_CullTransparentMesh: 1
+--- !u!114 &220438791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 220438787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b460d03234b24517bef9e268694aa76d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Id: breeds
+  focusedColor: {r: 0.38431376, g: 0.2392157, b: 0.13333334, a: 1}
+  unfocusedColor: {r: 0.52156866, g: 0.4431373, b: 0.38823533, a: 1}
+  colored:
+  - {fileID: 1753848174}
+  - {fileID: 2070961705}
+  button: {fileID: 220438789}
 --- !u!1 &263751680
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,6 +309,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 263751681}
+  - component: {fileID: 263751685}
   - component: {fileID: 263751684}
   - component: {fileID: 263751683}
   - component: {fileID: 263751682}
@@ -303,6 +394,20 @@ MonoBehaviour:
   - {fileID: 871804597, guid: 2657be8246ef86b4fb11b6fae3c55bf3, type: 3}
   - {fileID: -1425671143, guid: 2657be8246ef86b4fb11b6fae3c55bf3, type: 3}
   - {fileID: -518406585, guid: 2657be8246ef86b4fb11b6fae3c55bf3, type: 3}
+--- !u!114 &263751685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263751680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 443682fea43a475da4ea354b87d8ebb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Id: weather
+  Name: Forecast
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -549,12 +654,13 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 524867568}
   - {fileID: 263751681}
-  m_Father: {fileID: 529419567}
+  m_Father: {fileID: 23099238}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 30.168}
+  m_AnchoredPosition: {x: 0, y: 54.12142}
   m_SizeDelta: {x: 589.1094, y: 702.33}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &378077054
@@ -937,7 +1043,7 @@ GameObject:
   m_Component:
   - component: {fileID: 524867568}
   - component: {fileID: 524867572}
-  - component: {fileID: 524867571}
+  - component: {fileID: 524867573}
   - component: {fileID: 524867567}
   - component: {fileID: 524867570}
   - component: {fileID: 524867569}
@@ -947,7 +1053,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &524867567
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -969,19 +1075,19 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 524867566}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2103820774}
   - {fileID: 1468346470}
-  m_Father: {fileID: 855560440}
+  m_Father: {fileID: 378077053}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 963.918, y: 788.879}
+  m_AnchoredPosition: {x: 0, y: -0.00046539}
+  m_SizeDelta: {x: 589.11, y: 702.33}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &524867569
 MonoBehaviour:
@@ -1014,36 +1120,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadingText: {fileID: 2103820773}
---- !u!114 &524867571
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 524867566}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.78431374}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a0670590b701825438a96403df116986, type: 3}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 3
 --- !u!222 &524867572
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1052,6 +1128,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 524867566}
   m_CullTransparentMesh: 1
+--- !u!114 &524867573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 524867566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 443682fea43a475da4ea354b87d8ebb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Id: breeds
+  Name: Dog Breeds
 --- !u!1 &529419566
 GameObject:
   m_ObjectHideFlags: 0
@@ -1084,8 +1174,7 @@ RectTransform:
   m_Children:
   - {fileID: 434891667}
   - {fileID: 1416850570}
-  - {fileID: 2063708424}
-  - {fileID: 378077053}
+  - {fileID: 23099238}
   m_Father: {fileID: 855560440}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -1308,7 +1397,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Dog Breeds
+  m_text: Forecast
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d7e1f525e5c3fda4095d69a3facbbbed, type: 2}
   m_sharedMaterial: {fileID: -7470965658686173332, guid: d7e1f525e5c3fda4095d69a3facbbbed, type: 2}
@@ -1317,8 +1406,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4280433762
-  m_fontColor: {r: 0.38431376, g: 0.23529413, b: 0.13333334, a: 1}
+    rgba: 4284772740
+  m_fontColor: {r: 0.5176471, g: 0.44313726, b: 0.39215687, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1595,7 +1684,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 529419567}
-  - {fileID: 524867568}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1653,7 +1741,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.38431373, g: 0.23529412, b: 0.13333334, a: 1}
+  m_Color: {r: 0.5188679, g: 0.44464943, b: 0.39404592, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1894,7 +1982,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 850.55, y: 788.88}
+  m_SizeDelta: {x: 566.1739, y: 679.173}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1468346471
 MonoBehaviour:
@@ -1932,6 +2020,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1747592620}
   - component: {fileID: 1747592622}
+  - component: {fileID: 1747592623}
   - component: {fileID: 1747592621}
   m_Layer: 5
   m_Name: WeatherTab
@@ -2013,6 +2102,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1747592619}
   m_CullTransparentMesh: 1
+--- !u!114 &1747592623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1747592619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b460d03234b24517bef9e268694aa76d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Id: weather
+  focusedColor: {r: 0.38431376, g: 0.2392157, b: 0.13333334, a: 1}
+  unfocusedColor: {r: 0.52156866, g: 0.4431373, b: 0.38823533, a: 1}
+  colored:
+  - {fileID: 1106494131}
+  - {fileID: 663601840}
+  button: {fileID: 1747592621}
 --- !u!1 &1753848172
 GameObject:
   m_ObjectHideFlags: 0
@@ -2186,18 +2294,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2063708423}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 220438788}
   - {fileID: 1747592620}
-  m_Father: {fileID: 529419567}
+  m_Father: {fileID: 23099238}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0023346, y: -375.1199}
+  m_AnchoredPosition: {x: 0.0023346, y: -351.1665}
   m_SizeDelta: {x: 589.1, y: 108.2398}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2070961703
@@ -2402,8 +2510,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278254847
-  m_fontColor: {r: 1, g: 0.989954, b: 0, a: 1}
+    rgba: 4278649087
+  m_fontColor: {r: 1, g: 0, b: 0.02849722, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

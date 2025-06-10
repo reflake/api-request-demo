@@ -53,7 +53,7 @@ namespace Breeds.List
 			TryCancelRequest();
 		}
 		
-		private void TryCancelRequest()
+		public void TryCancelRequest()
 		{
 			if (_currentRequest != null && !_currentRequest.isDone)
 			{

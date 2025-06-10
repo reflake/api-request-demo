@@ -13,11 +13,17 @@ namespace Weather
 		[SerializeField] private Button refreshButton = null;
 		[SerializeField] private Sprite[] iconSprites = null;
 		
-		public event Action OnRefreshClick;
+		public event Action OnLostFocus = null;
+		public event Action OnRefreshClick = null;
 
 		private void Awake()
 		{
 			refreshButton.onClick.AddListener(Refresh);
+		}
+
+		private void OnDisable()
+		{
+			OnLostFocus?.Invoke();
 		}
 
 		public void ShowWeather(int temperature, IconType iconType)
